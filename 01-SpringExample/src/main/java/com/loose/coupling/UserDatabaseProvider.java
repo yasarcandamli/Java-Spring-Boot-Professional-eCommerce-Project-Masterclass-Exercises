@@ -1,11 +1,13 @@
-package com.tight.coupling;
+package com.loose.coupling;
 
 // A - MySQL, PostgreSQL
 // Web Services, MongoDB
 
-public class UserDatabase {
+public class UserDatabaseProvider implements UserDataProvider{
+
+    @Override
     public String getUserDetails() {
-        // Directly access database here
+        // Directly access database
         return "User Details From Database";
     }
 }
