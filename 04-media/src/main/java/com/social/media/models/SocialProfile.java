@@ -25,9 +25,11 @@ public class SocialProfile {
     private String description;
 
     public void setSocialUser(SocialUser socialUser) {
-        this.socialUser = socialUser;
-        if (socialUser.getSocialProfile() != this) {
-            socialUser.setSocialProfile(this);
+        if (this.socialUser != socialUser) {
+            this.socialUser = socialUser;
+            if (socialUser != null && socialUser.getSocialProfile() != this) {
+                socialUser.setSocialProfile(this);
+            }
         }
     }
 

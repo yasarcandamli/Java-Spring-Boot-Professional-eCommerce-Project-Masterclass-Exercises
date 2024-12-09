@@ -17,7 +17,7 @@ public class SocialUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne(mappedBy = "socialUser", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "socialUser", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     //@JoinColumn(name = "social_profile_id")
     private SocialProfile socialProfile;
 
@@ -38,7 +38,11 @@ public class SocialUser {
     }
 
     public void setSocialProfile(SocialProfile socialProfile) {
-        socialProfile.setSocialUser(this);
-        this.socialProfile = socialProfile;
+        if (this.socialProfile != socialProfile) {
+            this.socialProfile = socialProfile;
+            if (socialProfile != null && socialProfile.getSocialUser() != this) {
+                socialProfile.setSocialUser(this);
+            }
+        }
     }
 }
