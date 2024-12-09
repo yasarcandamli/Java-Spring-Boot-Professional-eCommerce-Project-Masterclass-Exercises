@@ -22,8 +22,17 @@ public class SocialProfile {
     @JsonIgnore
     private SocialUser socialUser;
 
+    private String description;
+
+    public void setSocialUser(SocialUser socialUser) {
+        this.socialUser = socialUser;
+        if (socialUser.getSocialProfile() != this) {
+            socialUser.setSocialProfile(this);
+        }
+    }
+
     @Override
-    public int hashCode(){
+    public int hashCode() {
         return Objects.hash(id);
     }
 }
