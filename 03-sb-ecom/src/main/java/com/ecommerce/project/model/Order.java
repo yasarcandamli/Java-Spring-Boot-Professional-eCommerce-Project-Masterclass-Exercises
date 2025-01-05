@@ -28,9 +28,9 @@ public class Order {
     private List<OrderItem> orderItems = new ArrayList<>();
     private LocalDate orderDate;
 
-    //    @OneToOne
-//    @JoinColumn(name = "payment_id")
-//    private Payment payment;
+    @OneToOne
+    @JoinColumn(name = "payment_id")
+    private Payment payment;
 
     private Double totalAmount;
     private String orderStatus;
