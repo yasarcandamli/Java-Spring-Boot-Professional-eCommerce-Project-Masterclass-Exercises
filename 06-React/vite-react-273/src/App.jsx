@@ -6,8 +6,8 @@ function App() {
   return (
     <>
       <h1>Hello</h1>
-      <ProfileCard name='Alice' />
-      <ProfileCard name='John' />
+      <ProfileCard name='Alice' age='23' isMember={true} />
+      <ProfileCard name='John' age='42' isMember={false} />
     </>
   )
 }
