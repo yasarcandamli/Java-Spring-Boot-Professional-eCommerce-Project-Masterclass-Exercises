@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function ProfileCard({ name, age, isMember }) {
     return (
         <div>
@@ -6,6 +8,12 @@ function ProfileCard({ name, age, isMember }) {
             <h3>Status: {isMember ? 'Active Member' : 'Guest Member'}</h3>
         </div>
     );
+}
+
+ProfileCard.propTypes = {
+    name: PropTypes.string,
+    age: PropTypes.number,
+    isMember: PropTypes.bool.isRequired,
 }
 
 export default ProfileCard;
