@@ -2,6 +2,12 @@ import './App.css'
 import ProfileCard from './ProfileCard'
 
 function App() {
+  //const person = { name: 'John', age: 30 };
+  //Without destructuring, using Dot notation
+  //const name = person.name;
+  //const age = person.age;
+  //With destructuring
+  //const { name, age } = person;
 
   return (
     <>
