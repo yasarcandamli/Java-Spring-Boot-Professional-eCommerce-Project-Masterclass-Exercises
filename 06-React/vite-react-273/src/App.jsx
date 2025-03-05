@@ -6,21 +6,27 @@ function App() {
     alert(`You clicked on: ${hobby}`);
   };
 
+  const aliceProfile = {
+    name: 'Alice',
+    age: 23,
+    isMember: true,
+    hobbies: ['Reading', 'Cooking'],
+    onHobbyClick: handleHobbyClick,
+  }
+
+  const johnProfile = {
+    name: 'John',
+    age: 43,
+    isMember: false,
+    hobbies: ['Swimming', 'Hiking'],
+    onHobbyClick: handleHobbyClick,
+  }
+
   return (
     <div className='app-container'>
       <h1>Hello</h1>
-      <ProfileCard
-        name='Alice'
-        age='23'
-        isMember={true}
-        hobbies={['Reading', 'Cooking']}
-        onHobbyClick={handleHobbyClick} />
-      <ProfileCard
-        name='John'
-        age='43'
-        isMember={false}
-        hobbies={['Swimming', 'Hiking']}
-        onHobbyClick={handleHobbyClick} />
+      <ProfileCard {...aliceProfile} />
+      <ProfileCard {...johnProfile} />
     </div>
   )
 }
