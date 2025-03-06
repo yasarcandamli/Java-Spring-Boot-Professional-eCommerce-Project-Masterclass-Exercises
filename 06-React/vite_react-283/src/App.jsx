@@ -1,38 +1,30 @@
 import { useState } from 'react';
 import './App.css'
 
+// You can store arrays, objects, or even more complex data structures in state
+
 function App() {
-  const [count, setCount] = useState(0);
-  const [step, setStep] = useState(1);
+  const [counters, setCounters] = useState([{ id: 1, value: 0 }]);
 
-  const incrementCount = () => {
-    setCount(count + step)
+  const addCounter = () => {
+    setCounters([...counters, { id: counters.length + 1, value: 0 }])
   };
 
-  const decrementCount = () => {
-    setCount(count - step)
-  };
-
-  const incrementTwice = () => {
-    // setCount(count + 1)
-    // setCount(count + 1)
-
-    setCount(prevCount => prevCount + 1)
-    setCount(prevCount => prevCount + 1)
-
-    // setCount(c => c + 1)
-    // setCount(c => c + 1)
+  const incrementCounter = (id) => {
+    setCounters(counters.map(counter => (
+      counter.id === id ? { ...counter, value: counter.value + 1 } : counter
+    )));
   }
 
   return (
     <div className='app-container'>
-      <h1>Counter Value: {count}</h1>
-      <input type="number"
-        value={step}
-        onChange={(e) => setStep(parseInt(e.target.value))} />
-      <button onClick={incrementCount}>Increment</button>
-      <button onClick={decrementCount}>Decrement</button>
-      <button onClick={incrementTwice}>+2</button>
+      <button onClick={addCounter}>Add Counter</button>
+      <ul>
+        {counters.map(counter => (
+          <li key={counter.id}>Counter {counter.id}: {counter.value}
+            <button onClick={() => { incrementCounter(counter.id) }}>Increment</button></li>
+        ))}
+      </ul>
     </div>
   );
 }
