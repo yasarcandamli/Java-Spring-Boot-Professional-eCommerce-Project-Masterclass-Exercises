@@ -1,46 +1,49 @@
+import { createContext, useContext } from 'react';
 import './App.css'
 
-// - App = DATA
+// - App = HAS THEME
 //   - ComponentA
 //     - ComponentB
 //       - ThemedComponent = NEEDS THEME
+const ThemeContext = createContext('light');
 
 function App() {
-  const theme = 'dark';
 
   return (
     <div style={{ border: '2px solid black', padding: '20px' }}>
       <h2>App (Parent)</h2>
-      <ComponentA theme={theme} />
+      <ComponentA />
     </div>
   )
 }
 
-function ComponentA({ theme }) {
+function ComponentA() {
   return (
-    <div style={{ border: '2px solid black', padding: '20px' }}>
+    <div style={{ border: '2px solid blue', padding: '20px' }}>
       <h2>ComponentA (Child)</h2>
-      <ComponentB theme={theme} />
+      <ComponentB />
     </div>
   );
 }
 
 // export default ComponentA;
 
-function ComponentB({ theme }) {
+function ComponentB() {
   return (
-    <div style={{ border: '2px solid black', padding: '20px' }}>
+    <div style={{ border: '2px solid green', padding: '20px' }}>
       <h2>ComponentB (GrandChild)</h2>
-      <ThemedComponent theme={theme} />
+      <ThemedComponent />
     </div>
   );
 }
 
 // export default ComponentB;
 
-function ThemedComponent({ theme }) {
+function ThemedComponent() {
+  const theme = useContext(ThemeContext);
+
   return (
-    <div style={{ border: '2px solid black', padding: '20px' }}>
+    <div style={{ border: '2px solid red', padding: '20px' }}>
       <h2>ThemedComponent (Great - GrandChild)</h2>
       <div>The current theme is: {theme}</div>
     </div>
