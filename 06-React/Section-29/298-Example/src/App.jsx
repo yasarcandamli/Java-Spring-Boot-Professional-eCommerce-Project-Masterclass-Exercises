@@ -5,15 +5,22 @@ import './App.css'
 //   - ComponentA
 //     - ComponentB
 //       - ThemedComponent = NEEDS THEME
+
+// <MyContext.Provider value={someValue}>
+//   <ComponentA />
+// </MyContext.Provider>
+
 const ThemeContext = createContext('light');
 
 function App() {
 
   return (
-    <div style={{ border: '2px solid black', padding: '20px' }}>
-      <h2>App (Parent)</h2>
-      <ComponentA />
-    </div>
+    <ThemeContext.Provider value='dark'>
+      <div style={{ border: '2px solid black', padding: '20px' }}>
+        <h2>App (Parent)</h2>
+        <ComponentA />
+      </div>
+    </ThemeContext.Provider>
   )
 }
 
