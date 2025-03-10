@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import axios from 'axios';
+import api from './api/api';
 
 // axios.interceptors.request.use(request => {
 //   console.log('Starting Request', request);
@@ -11,23 +11,6 @@ import axios from 'axios';
 //   console.log('Response', response);
 //   return response;
 // })
-
-const api = axios.create({
-  baseURL: 'https://jsonplaceholder.typicode.com',
-  headers: {
-    'Authorization': 'Bearer <TOKEN>'
-  }
-});
-
-api.interceptors.request.use(request => {
-  console.log('Starting Request', request);
-  return request;
-})
-
-api.interceptors.response.use(response => {
-  console.log('Response', response);
-  return response;
-})
 
 function App() {
   const [data, setData] = useState([]);
