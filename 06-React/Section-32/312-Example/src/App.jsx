@@ -21,6 +21,13 @@ function App() {
     console.log('Email ', watchedEmail);
   }, [watchedEmail]);
 
+  // const validateName = (value) => {
+  //   if (value === 'admin') {
+  //     return 'Admin is not allowed!';
+  //   }
+  //   return true;
+  // }
+
   return (
     <div>
       <h1>Forms in React</h1>
@@ -34,6 +41,11 @@ function App() {
               minLength: {
                 value: 2,
                 message: 'Name should be at least 2 characters!'
+              },
+              // validate: validateName
+              validate: {
+                notAdmin: (value) => value !== 'admin' || 'Admin is not allowed!',
+                isNotNumber: (value) => isNaN(value) || 'Name cannot be number'
               }
             })} />
           {errors.name && <p>{errors.name.message}</p>}
