@@ -3,8 +3,11 @@ import './App.css'
 import { useForm } from 'react-hook-form';
 
 function App() {
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
+  const onSubmit = (data) => {
+    console.log('Form Data: ', data);
+    reset();
+  };
 
   // console.log(watch('name'));
   const watchedName = watch('name');
@@ -43,6 +46,7 @@ function App() {
         </label>
 
         <button type='submit'>Submit</button>
+        <button type='button' onClick={() => reset()}>Reset</button>
       </form>
     </div>
   )
