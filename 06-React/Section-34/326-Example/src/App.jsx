@@ -5,6 +5,7 @@ import About from './About';
 import Contact from './Contact';
 import Team from './Team';
 import NotFound from './NotFound';
+import CurrentLocation from './CurrentLocation';
 
 function App() {
 
@@ -24,6 +25,8 @@ function App() {
               to="/contact">Contact</Link></li>
           </ul>
         </nav>
+
+        <CurrentLocation />
 
         <div className='container mx-auto py-8'>
           <Routes>
