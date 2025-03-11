@@ -4,6 +4,7 @@ import Home from './Home';
 import About from './About';
 import Contact from './Contact';
 import Team from './Team';
+import NotFound from './NotFound';
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
               <Route path='team' element={<Team />} />
             </Route>
             <Route path='/contact' element={<Contact />} />
+            <Route path='*' element={<NotFound />} />
           </Routes>
         </div>
       </div>
