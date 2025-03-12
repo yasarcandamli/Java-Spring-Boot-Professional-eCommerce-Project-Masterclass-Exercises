@@ -1,5 +1,6 @@
 import './App.css'
 import Counter from './Counter'
+import Display from './Display'
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <div>
       <p>Welcome!</p>
       <Counter />
+      <Display />
     </div>
   )
 }
