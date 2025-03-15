@@ -57,8 +57,8 @@ const ProductCard = ({
                     {productName}
                 </h2>
 
-                <div className='min-h-20 max-h-20'>
-                    <p className='text-gray-600 text-sm'>{description}</p>
+                <div className='min-h-20 max-h-20 overflow-hidden'>
+                    <p className='text-gray-600 text-sm line-clamp-3'>{description}</p>
                 </div>
 
                 <div className='flex items-center justify-between'>
