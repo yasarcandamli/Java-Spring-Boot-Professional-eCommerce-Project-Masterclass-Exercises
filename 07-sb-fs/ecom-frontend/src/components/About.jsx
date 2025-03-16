@@ -67,10 +67,7 @@ const About = () => {
                             price={product.price}
                             about
                         />
-                    ))
-                    }
-
-
+                    ))}
                 </div>
             </div>
         </div>
