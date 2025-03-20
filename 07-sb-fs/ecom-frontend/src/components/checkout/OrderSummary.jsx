@@ -27,7 +27,7 @@ const OrderSummary = ({ totalPrice, cart, address, paymentMethod }) => {
                             </p>
                             <p>
                                 <strong>Pincode: </strong>
-                                {address?.pincode}
+                                {address?.pinCode}
                             </p>
                             <p>
                                 <strong>Country: </strong>
@@ -44,7 +44,7 @@ const OrderSummary = ({ totalPrice, cart, address, paymentMethod }) => {
                             </p>
                         </div>
 
-                        <div className='pb-4 border rounded-lg shadow-sm mb-6'>
+                        <div className='p-4 border rounded-lg shadow-sm mb-6'>
                             <h2 className='text-2xl font-semibold mb-2'>Order Items</h2>
                             <div className='space-y-2'>
                                 {cart?.map((item) => (
@@ -53,7 +53,7 @@ const OrderSummary = ({ totalPrice, cart, address, paymentMethod }) => {
                                             }`}
                                             alt='Product'
                                             className='w-12 h-12 rounded'></img>
-                                        <div className='text-gray-500'>
+                                        <div className='text-gray-500 ml-3'>
                                             <p>{item?.productName}</p>
                                             <p>
                                                 {item?.quantity} x ${item?.specialPrice} = ${

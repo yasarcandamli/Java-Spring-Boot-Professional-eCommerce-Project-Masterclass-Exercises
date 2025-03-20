@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import Products from './components/products/Products'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
@@ -12,7 +12,7 @@ import LogIn from './components/auth/LogIn'
 import PrivateRoute from './components/PrivateRoute'
 import Register from './components/auth/Register'
 import Checkout from './components/checkout/Checkout'
-
+import PaymentConfirmation from './components/checkout/PaymentConfirmation'
 
 function App() {
   return (
@@ -26,18 +26,18 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/cart' element={<Cart />} />
 
-          <Route path='/' element={<PrivateRoute />} >
+          <Route path='/' element={<PrivateRoute />}>
             <Route path='/checkout' element={<Checkout />} />
-            <Route path='/order-confirm' element={<Checkout />} />
+            <Route path='/order-confirm' element={<PaymentConfirmation />} />
           </Route>
 
-          <Route path='/' element={<PrivateRoute publicPage />} >
+          <Route path='/' element={<PrivateRoute publicPage />}>
             <Route path='/login' element={<LogIn />} />
             <Route path='/register' element={<Register />} />
           </Route>
         </Routes>
       </Router>
-      <Toaster position='bottom- center' />
+      <Toaster position='bottom-center' />
     </React.Fragment>
   )
 }

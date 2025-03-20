@@ -36,7 +36,7 @@ const AddAddressForm = ({ address, setOpenAddressModal }) => {
             setValue("city", address?.city);
             setValue("street", address?.street);
             setValue("state", address?.state);
-            setValue("pincode", address?.pincode);
+            setValue("pinCode", address?.pinCode);
             setValue("country", address?.country);
         }
     }, [address]);
@@ -91,7 +91,7 @@ const AddAddressForm = ({ address, setOpenAddressModal }) => {
                     <InputField
                         label="Pincode"
                         required
-                        id="pincode"
+                        id="pinCode"
                         type="text"
                         message="*Pincode is required"
                         placeholder="Enter Pincode"

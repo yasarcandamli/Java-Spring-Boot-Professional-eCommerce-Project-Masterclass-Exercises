@@ -57,7 +57,7 @@ const ItemContent = ({
 
                 <div className="md:w-36 sm:w-24 w-12">
                     <img
-                        src={image}
+                        src={`${import.meta.env.VITE_BACKEND_URL}/images/${image}`}
                         alt={productName}
                         className="md:h-36 sm:h-24 h-12 w-full object-cover rounded-md" />
 

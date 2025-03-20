@@ -29,8 +29,8 @@ const AddressList = ({ addresses, setSelectedAddress, setOpenAddressModal, setOp
                     key={address.addressId}
                     onClick={() => handleAddressSelection(address)}
                     className={`p-4 border rounded-md cursor-pointer relative ${selectedUserCheckoutAddress?.addressId === address.addressId
-                            ? "bg-green-100"
-                            : "bg-white"
+                        ? "bg-green-100"
+                        : "bg-white"
                         }`}>
                     <div className="flex items-start">
                         <div className="space-y-1">
@@ -54,7 +54,7 @@ const AddressList = ({ addresses, setSelectedAddress, setOpenAddressModal, setOp
 
                             <div className="flex items-center ">
                                 <MdPinDrop size={17} className='mr-2 text-gray-600' />
-                                <p>{address.pincode}</p>
+                                <p>{address.pinCode}</p>
                             </div>
 
                             <div className="flex items-center ">

@@ -23,7 +23,7 @@ const Navbar = () => {
 
                 <ul className={`flex sm:gap-10 gap-4 sm:items-center  text-slate-800 sm:static absolute left-0 top-[70px] sm:shadow-none shadow-md ${navbarOpen ? "h-fit sm:pb-0 pb-5" : "h-0 overflow-hidden"
                     }  transition-all duration-100 sm:h-fit sm:bg-none bg-custom-gradient   text-white sm:w-fit w-full sm:flex-row flex-col px-4 sm:px-0`}>
-                    <li className="font-[500] transition-all duration-150">
+                    <li className="font-[500] text-center transition-all duration-150">
                         <Link className={`${path === "/" ? "text-white font-semibold" : "text-gray-200"
                             }`}
                             to="/">
@@ -31,7 +31,7 @@ const Navbar = () => {
                         </Link>
                     </li>
 
-                    <li className="font-[500] transition-all duration-150">
+                    <li className="font-[500] text-center transition-all duration-150">
                         <Link className={`${path === "/products" ? "text-white font-semibold" : "text-gray-200"
                             }`}
                             to="/products">
@@ -40,7 +40,7 @@ const Navbar = () => {
                     </li>
 
 
-                    <li className="font-[500] transition-all duration-150">
+                    <li className="font-[500] text-center transition-all duration-150">
                         <Link className={`${path === "/about" ? "text-white font-semibold" : "text-gray-200"
                             }`}
                             to="/about">
@@ -48,7 +48,7 @@ const Navbar = () => {
                         </Link>
                     </li>
 
-                    <li className="font-[500] transition-all duration-150">
+                    <li className="font-[500] text-center transition-all duration-150">
                         <Link className={`${path === "/contact" ? "text-white font-semibold" : "text-gray-200"
                             }`}
                             to="/contact">
@@ -56,7 +56,7 @@ const Navbar = () => {
                         </Link>
                     </li>
 
-                    <li className="font-[500] transition-all duration-150">
+                    <li className="font-[500] text-center transition-all duration-150">
                         <Link className={`${path === "/cart" ? "text-white font-semibold" : "text-gray-200"
                             }`}
                             to="/cart">
